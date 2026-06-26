@@ -2,7 +2,7 @@
   "name": "syntask",
   "displayName": "syntask",
   "description": "Learning hovers for C# syntax features, modifiers, contextual keywords, and language constructs.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "markcwatson",
   "license": "MIT",
   "repository": {

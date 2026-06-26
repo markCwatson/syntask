@@ -13,3 +13,7 @@ All notable changes to the "syntask" extension will be documented in this file.
 - Toggle examples on/off
 - Command palette: "C#: Explain Syntax at Cursor"
 - Hover-only or command-only trigger modes
+
+## [1.0.0] - 2026-06-25
+
+Initial publish!
