@@ -15,6 +15,5 @@ SUPPORT.md
 **/eslint.config.mjs
 **/.vscode-test.*
 package-lock.json
-!out/**
 out/test/**
 out/**/*.map
