@@ -17,3 +17,17 @@ SUPPORT.md
 package-lock.json
 out/test/**
 out/**/*.map
+out/**/*.pdb
+out/server/cs/**
+out/server/de/**
+out/server/es/**
+out/server/fr/**
+out/server/it/**
+out/server/ja/**
+out/server/ko/**
+out/server/pl/**
+out/server/pt-BR/**
+out/server/ru/**
+out/server/tr/**
+out/server/zh-Hans/**
+out/server/zh-Hant/**
