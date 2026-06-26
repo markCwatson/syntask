@@ -3,7 +3,7 @@
   "displayName": "syntask",
   "description": "Learning hovers for C# syntax features, modifiers, contextual keywords, and language constructs.",
   "version": "0.0.1",
-  "publisher": "mark watson",
+  "publisher": "markcwatson",
   "license": "MIT",
   "repository": {
     "type": "git",
