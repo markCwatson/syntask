@@ -4,13 +4,17 @@ src/**
 server/**
 tests/**
 node_modules/**
+.git/**
 .gitignore
 .yarnrc
 vsc-extension-quickstart.md
 dev.md
+release.sh
+SUPPORT.md
 **/tsconfig.json
 **/eslint.config.mjs
 **/*.map
 **/*.ts
 !out/**
 **/.vscode-test.*
+package-lock.json
