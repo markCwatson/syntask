@@ -100,8 +100,10 @@ for entry in "${TARGETS[@]}"; do
   # Compile TypeScript
   npm run compile
 
+  # Package for this platform (upload manually via Marketplace portal)
+  npx @vscode/vsce package --target "$VSCE_TARGET"
   # Package and publish for this platform
-  npx @vscode/vsce publish --azure-credential --target "$VSCE_TARGET"
+  # npx @vscode/vsce publish --azure-credential --target "$VSCE_TARGET"
 done
 
 echo ""
