@@ -49,7 +49,7 @@ if [[ "$CONFIRM" != "y" && "$CONFIRM" != "Y" ]]; then
 fi
 
 # --- Commit ---
-git add package.json CHANGELOG.md
+git add package.json package-lock.json CHANGELOG.md
 git commit -m "release: v$VERSION"
 
 # --- Tag ---
@@ -84,6 +84,9 @@ for entry in "${TARGETS[@]}"; do
 
   echo ""
   echo "--- $VSCE_TARGET ($DOTNET_RID) ---"
+
+  # Clean previous platform's server binaries
+  rm -rf ./out/server
 
   # Build self-contained single-file binary
   dotnet publish ./server/CSharpLearningServer.csproj \
