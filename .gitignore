@@ -1,0 +1,7 @@
+node_modules
+bin/
+obj/
+out/
+*.vsix
+.vscode-test/
+dev.md

@@ -1,0 +1,109 @@
+{
+  "name": "syntask",
+  "displayName": "syntask",
+  "description": "Learning hovers for C# syntax features, modifiers, contextual keywords, and language constructs.",
+  "version": "0.0.1",
+  "publisher": "mark watson",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markCwatson/syntask"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.125.0"
+  },
+  "categories": [
+    "Education",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "csharp",
+    "c#",
+    "learning",
+    "hover",
+    "syntax",
+    "roslyn"
+  ],
+  "activationEvents": [
+    "onLanguage:csharp"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "csharpLearningHovers.explainSyntaxAtCursor",
+        "title": "C#: Explain Syntax at Cursor"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "csharpLearningHovers.explainSyntaxAtCursor",
+          "when": "editorLangId == csharp"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "syntask",
+      "properties": {
+        "csharpLearningHovers.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable learning hovers for C# syntax features."
+        },
+        "csharpLearningHovers.detailLevel": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ],
+          "default": "beginner",
+          "description": "Controls how much detail appears in syntax learning hovers."
+        },
+        "csharpLearningHovers.includeExamples": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include short examples in learning hovers."
+        },
+        "csharpLearningHovers.triggerMode": {
+          "type": "string",
+          "enum": [
+            "hover",
+            "commandOnly"
+          ],
+          "default": "hover",
+          "description": "Controls whether explanations appear on hover or only from the command palette."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "publish-server": "dotnet publish ./server/CSharpLearningServer.csproj -c Release -o ./out/server",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.125.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "typescript-eslint": "^8.61.1",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}
