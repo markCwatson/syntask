@@ -16,8 +16,26 @@ public static class SemanticAnalyzer
     var references = new List<MetadataReference>();
 
     // Get the runtime directory where core assemblies live
+    // Assembly.Location is empty in single-file apps, so fall back to
+    // the trusted assemblies list provided by the runtime.
+#pragma warning disable IL3000 // handled by fallback below
     var runtimeDir = Path.GetDirectoryName(typeof(object).Assembly.Location);
-    if (runtimeDir is null)
+#pragma warning restore IL3000
+    if (string.IsNullOrEmpty(runtimeDir))
+    {
+      // Single-file publish: use trusted platform assemblies to find the runtime dir
+      var trustedAssemblies = (AppContext.GetData("TRUSTED_PLATFORM_ASSEMBLIES") as string);
+      if (trustedAssemblies is not null)
+      {
+        var first = trustedAssemblies.Split(Path.PathSeparator).FirstOrDefault();
+        if (first is not null)
+        {
+          runtimeDir = Path.GetDirectoryName(first);
+        }
+      }
+    }
+
+    if (string.IsNullOrEmpty(runtimeDir))
     {
       return references.ToArray();
     }
