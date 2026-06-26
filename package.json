@@ -56,21 +56,6 @@
           "default": true,
           "description": "Enable learning hovers for C# syntax features."
         },
-        "csharpLearningHovers.detailLevel": {
-          "type": "string",
-          "enum": [
-            "beginner",
-            "intermediate",
-            "advanced"
-          ],
-          "default": "beginner",
-          "description": "Controls how much detail appears in syntax learning hovers."
-        },
-        "csharpLearningHovers.includeExamples": {
-          "type": "boolean",
-          "default": true,
-          "description": "Include short examples in learning hovers."
-        },
         "csharpLearningHovers.triggerMode": {
           "type": "string",
           "enum": [

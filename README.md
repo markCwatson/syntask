@@ -13,18 +13,15 @@ Hover over any C# keyword and get a concise teaching explanation with examples. 
 - **45+ keywords covered**: `abstract`, `sealed`, `virtual`, `override`, `async`, `await`, `record`, `required`, `init`, `partial`, `static`, `readonly`, `const`, `yield`, `is`, `as`, `where`, `when`, `delegate`, `event`, and more
 - **Semantic analysis**: `var` shows the inferred type, `default` shows the resolved value, `nameof` shows the string result
 - **Context-aware**: same keyword → different explanation depending on syntax position
-- **Configurable**: adjust detail level (beginner/intermediate/advanced), toggle examples, or use command-only mode
 - **Local-only**: all analysis runs on your machine via Roslyn. No code is sent anywhere.
 - **No AI or LLM!**: No LLMs were harmed during the making of this extension. But seriously, no AI/LLM is used to generate the information: it's all Roslyn-based.
 
 ## Settings
 
-| Setting                                | Default    | Description                                          |
-| -------------------------------------- | ---------- | ---------------------------------------------------- |
-| `csharpLearningHovers.enabled`         | `true`     | Enable/disable learning hovers                       |
-| `csharpLearningHovers.detailLevel`     | `beginner` | Detail level: beginner, intermediate, advanced       |
-| `csharpLearningHovers.includeExamples` | `true`     | Show code examples in hovers                         |
-| `csharpLearningHovers.triggerMode`     | `hover`    | `hover` for automatic, `commandOnly` for manual only |
+| Setting                            | Default | Description                                          |
+| ---------------------------------- | ------- | ---------------------------------------------------- |
+| `csharpLearningHovers.enabled`     | `true`  | Enable/disable learning hovers                       |
+| `csharpLearningHovers.triggerMode` | `hover` | `hover` for automatic, `commandOnly` for manual only |
 
 ## Commands
 
@@ -32,8 +29,9 @@ Hover over any C# keyword and get a concise teaching explanation with examples. 
 
 ## Requirements
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (10.0 or later) on your PATH
 - [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) for language support
+
+No .NET SDK installation is required — the extension ships with a self-contained Roslyn backend.
 
 ## Privacy
 
@@ -44,7 +42,6 @@ This extension analyzes C# source **locally only**. It does not send code to any
 **Hovers not appearing?**
 
 - Check that `csharpLearningHovers.enabled` is `true`
-- Verify `dotnet` is on your PATH: run `dotnet --version` in a terminal
 - Check the "syntask" output channel for server errors
 
 **Slow first hover?**
