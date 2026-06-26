@@ -17,3 +17,7 @@ All notable changes to the "syntask" extension will be documented in this file.
 ## [1.0.0] - 2026-06-25
 
 Initial publish!
+
+## [1.0.1] - 2026-06-25
+
+- Removed unused configurations
