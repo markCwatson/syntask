@@ -1,6 +1,6 @@
 # syntask
 
-**Learning hovers for C# syntax features** — context-aware explanations for keywords, modifiers, and language constructs, powered by Roslyn.
+**Learning hovers for C# syntax features**: context-aware explanations for keywords, modifiers, language constructs, and compiler errors/warnings, powered by Roslyn.
 
 ## What it does
 
@@ -29,14 +29,14 @@ Hover over any C# keyword and get a concise teaching explanation with examples. 
 
 ## Commands
 
-- **syntask: Explain Syntax at Cursor** — opens a full syntax explanation in a new tab
-- **syntask: Explain Error at Cursor** — opens a compiler diagnostic explanation in a new tab
+- **syntask: Explain Syntax at Cursor**: opens a full syntax explanation in a new tab
+- **syntask: Explain Error at Cursor**: opens a compiler diagnostic explanation in a new tab
 
 ## Requirements
 
 - [C# extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) for language support
 
-No .NET SDK installation is required — the extension ships with a self-contained Roslyn backend.
+No .NET SDK installation is required (the extension ships with a self-contained Roslyn backend).
 
 ## Privacy
 
@@ -57,4 +57,4 @@ This extension analyzes C# source **locally only**. It does not send code to any
 
 - Syntax-only for most keywords (no project/solution context)
 - `var` inference requires basic type resolution; complex generics may show `?`
-- Does not replace the C# extension's symbol hovers — it adds teaching content alongside them
+- Does not replace the C# extension's symbol hovers: it adds teaching content alongside them
