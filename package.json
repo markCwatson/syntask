@@ -36,14 +36,24 @@
   "contributes": {
     "commands": [
       {
-        "command": "csharpLearningHovers.explainSyntaxAtCursor",
-        "title": "C#: Explain Syntax at Cursor"
+        "command": "syntask.explainSyntaxAtCursor",
+        "title": "Explain Syntax at Cursor",
+        "category": "syntask"
+      },
+      {
+        "command": "syntask.explainDiagnosticAtCursor",
+        "title": "Explain Error at Cursor",
+        "category": "syntask"
       }
     ],
     "menus": {
       "commandPalette": [
         {
-          "command": "csharpLearningHovers.explainSyntaxAtCursor",
+          "command": "syntask.explainSyntaxAtCursor",
+          "when": "editorLangId == csharp"
+        },
+        {
+          "command": "syntask.explainDiagnosticAtCursor",
           "when": "editorLangId == csharp"
         }
       ]
@@ -51,12 +61,12 @@
     "configuration": {
       "title": "syntask",
       "properties": {
-        "csharpLearningHovers.enabled": {
+        "syntask.enabled": {
           "type": "boolean",
           "default": true,
           "description": "Enable learning hovers for C# syntax features."
         },
-        "csharpLearningHovers.triggerMode": {
+        "syntask.triggerMode": {
           "type": "string",
           "enum": [
             "hover",
@@ -64,6 +74,26 @@
           ],
           "default": "hover",
           "description": "Controls whether explanations appear on hover or only from the command palette."
+        },
+        "syntask.diagnosticExplanations.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable the 'Explain Error at Cursor' command for compiler diagnostics."
+        },
+        "syntask.detailLevel": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ],
+          "default": "beginner",
+          "description": "Controls the verbosity of explanations."
+        },
+        "syntask.includeExamples": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include code examples in explanations."
         }
       }
     }

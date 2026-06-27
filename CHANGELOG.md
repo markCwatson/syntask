@@ -1,6 +1,10 @@
-# Changelog
+## [1.0.1] - 2026-06-25
 
-All notable changes to the "syntask" extension will be documented in this file.
+- Removed unused configurations
+
+## [1.0.0] - 2026-06-25
+
+Initial publish!
 
 ## [0.0.1] - 2026-06-25
 
@@ -13,11 +17,3 @@ All notable changes to the "syntask" extension will be documented in this file.
 - Toggle examples on/off
 - Command palette: "C#: Explain Syntax at Cursor"
 - Hover-only or command-only trigger modes
-
-## [1.0.0] - 2026-06-25
-
-Initial publish!
-
-## [1.0.1] - 2026-06-25
-
-- Removed unused configurations

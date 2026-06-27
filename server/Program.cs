@@ -27,6 +27,12 @@ while (Console.ReadLine() is { } line)
           request.Params.GetRawText(), options)!;
       result = HoverService.GetHover(hoverRequest);
     }
+    else if (request.Method == "diagnosticExplanation")
+    {
+      var req = JsonSerializer.Deserialize<DiagnosticExplanationRequest>(
+          request.Params.GetRawText(), options)!;
+      result = DiagnosticExplanationService.GetDiagnosticExplanation(req);
+    }
     else
     {
       error = $"Unknown method: {request.Method}";

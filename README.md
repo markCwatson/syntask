@@ -12,20 +12,25 @@ Hover over any C# keyword and get a concise teaching explanation with examples. 
 
 - **45+ keywords covered**: `abstract`, `sealed`, `virtual`, `override`, `async`, `await`, `record`, `required`, `init`, `partial`, `static`, `readonly`, `const`, `yield`, `is`, `as`, `where`, `when`, `delegate`, `event`, and more
 - **Semantic analysis**: `var` shows the inferred type, `default` shows the resolved value, `nameof` shows the string result
+- **Compiler diagnostic explanations**: explain errors and warnings at the cursor from the command palette or hover
 - **Context-aware**: same keyword → different explanation depending on syntax position
 - **Local-only**: all analysis runs on your machine via Roslyn. No code is sent anywhere.
 - **No AI or LLM!**: No LLMs were harmed during the making of this extension. But seriously, no AI/LLM is used to generate the information: it's all Roslyn-based.
 
 ## Settings
 
-| Setting                            | Default | Description                                          |
-| ---------------------------------- | ------- | ---------------------------------------------------- |
-| `csharpLearningHovers.enabled`     | `true`  | Enable/disable learning hovers                       |
-| `csharpLearningHovers.triggerMode` | `hover` | `hover` for automatic, `commandOnly` for manual only |
+| Setting                                  | Default    | Description                                          |
+| ---------------------------------------- | ---------- | ---------------------------------------------------- |
+| `syntask.enabled`                        | `true`     | Enable/disable learning hovers                       |
+| `syntask.triggerMode`                    | `hover`    | `hover` for automatic, `commandOnly` for manual only |
+| `syntask.diagnosticExplanations.enabled` | `true`     | Enable compiler diagnostic explanations              |
+| `syntask.detailLevel`                    | `beginner` | Controls explanation verbosity                       |
+| `syntask.includeExamples`                | `true`     | Include code examples in explanations                |
 
 ## Commands
 
-- **C#: Explain Syntax at Cursor** — opens a full explanation in a new tab
+- **syntask: Explain Syntax at Cursor** — opens a full syntax explanation in a new tab
+- **syntask: Explain Error at Cursor** — opens a compiler diagnostic explanation in a new tab
 
 ## Requirements
 
@@ -41,7 +46,7 @@ This extension analyzes C# source **locally only**. It does not send code to any
 
 **Hovers not appearing?**
 
-- Check that `csharpLearningHovers.enabled` is `true`
+- Check that `syntask.enabled` is `true`
 - Check the "syntask" output channel for server errors
 
 **Slow first hover?**

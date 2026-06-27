@@ -34,3 +34,17 @@ public sealed record HoverRange(
     int EndLine,
     int EndCharacter
 );
+
+public sealed record DiagnosticExplanationRequest(
+    string Text,
+    string? FilePath,
+    int Line,
+    int Character,
+    string DetailLevel,
+    bool IncludeExamples
+);
+
+public sealed record DiagnosticExplanationResponse(
+    string? Markdown,
+    HoverRange? Range
+);

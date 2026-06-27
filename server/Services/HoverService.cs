@@ -28,6 +28,12 @@ public static class HoverService
 
     var token = root.FindToken(absolutePosition, findInsideTrivia: true);
 
+    // Skip if cursor is in trivia (comments, whitespace) rather than on actual token text
+    if (!token.Span.Contains(absolutePosition))
+    {
+      return new HoverResponse(null, null);
+    }
+
     // Try syntax-only classification first (fast path)
     var result = CSharpFeatureClassifier.GetHover(token, sourceText, request);
     if (result.Markdown is not null)

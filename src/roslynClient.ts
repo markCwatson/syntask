@@ -47,6 +47,35 @@ export class RoslynClient implements vscode.Disposable {
     });
   }
 
+  async getDiagnosticExplanation(params: any): Promise<any | undefined> {
+    this.ensureStarted();
+
+    const child = this.process;
+    if (!child) {
+      return undefined;
+    }
+
+    const id = this.nextId++;
+
+    const message = {
+      id,
+      method: 'diagnosticExplanation',
+      params,
+    };
+
+    child.stdin.write(JSON.stringify(message) + '\n');
+
+    return new Promise((resolve, reject) => {
+      this.pending.set(id, { resolve, reject });
+
+      setTimeout(() => {
+        if (this.pending.delete(id)) {
+          reject(new Error('Roslyn diagnostic explanation request timed out.'));
+        }
+      }, 5000);
+    });
+  }
+
   private ensureStarted(): void {
     if (this.process) {
       return;

@@ -9,7 +9,7 @@
 
 ### Hovers not appearing
 
-1. Ensure `csharpLearningHovers.enabled` is `true` in settings
+1. Ensure `syntask.enabled` is `true` in settings
 2. Verify .NET SDK is installed: `dotnet --version`
 3. Check the "syntask" output channel (View → Output → select "syntask")
 
@@ -20,4 +20,4 @@
 
 ### Conflicting with C# extension hovers
 
-- syntask adds a second hover panel beneath the C# extension's hover. Both appear side-by-side. If you prefer command-only mode, set `csharpLearningHovers.triggerMode` to `commandOnly`.
+- syntask adds a second hover panel beneath the C# extension's hover. Both appear side-by-side. If you prefer command-only mode, set `syntask.triggerMode` to `commandOnly`.
