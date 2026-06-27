@@ -6,6 +6,8 @@ tests/**
 node_modules/**
 .git/**
 .gitignore
+*.sln
+*.slnx
 .yarnrc
 vsc-extension-quickstart.md
 dev.md

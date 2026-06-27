@@ -2,6 +2,9 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
+using Server.Models;
+
+namespace Server.Utils;
 
 /// <summary>
 /// Provides hover explanations for tokens that require semantic analysis

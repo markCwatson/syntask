@@ -2,6 +2,8 @@ using System.Reflection;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 
+namespace Server.Utils;
+
 /// <summary>
 /// Creates a minimal CSharpCompilation from document text with enough
 /// BCL references to resolve common types (int, string, List, Task, etc.).

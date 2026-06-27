@@ -13,7 +13,7 @@ echo "=== Publishing server ==="
 npm run publish-server
 
 echo "=== Running tests ==="
-cd tests/CSharpLearningServer.Tests
+cd server/tests/CSharpLearningServer.Tests
 dotnet test --verbosity quiet
 
 echo "\n✓ All checks passed"

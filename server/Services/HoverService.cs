@@ -1,6 +1,10 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
+using Server.Models;
+using Server.Utils;
+
+namespace Server.Services;
 
 public static class HoverService
 {

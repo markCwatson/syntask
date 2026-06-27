@@ -1,5 +1,7 @@
 using System.Text.Json;
 
+namespace Server.Models;
+
 public sealed record RpcRequest(
     int Id,
     string Method,

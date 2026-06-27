@@ -1,3 +1,6 @@
+using Server.Models;
+using Server.Services;
+
 namespace CSharpLearningServer.Tests;
 
 /// <summary>
